@@ -1,5 +1,13 @@
-<div class="container-fluid">
-  <div class="col-md-10">
+<div class="container-fluid ">
+  <div class="parallax">
+<div class="desc-container">
+  <p> Place where you can get your stats refreshed </p>
+</div>
+  </div>
+  <div class="col-md-10 text-container">
+    <div class=" container text-style">
+      <p> Choose a country you like to explore stats :</p>
+    </div>
     <div class="home-container" *ngFor="let i of numCountries">
 
       <img src="./../../assets/Flags/{{i}}.png" style="width:60px; height:40px;"/>
@@ -8,8 +16,6 @@
       <div class="flag-text">
         <a>{{i}} </a>
       </div>
-
-
     </div>
   </div>
 </div>
