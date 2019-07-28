@@ -1,0 +1,33 @@
+<!--&lt;!&ndash;<p>&ndash;&gt;-->
+  <!--&lt;!&ndash;india works!&ndash;&gt;-->
+<!--&lt;!&ndash;</p>&ndash;&gt;-->
+
+<!--<p-panelMenu [model]="items" [style]="{'width': '200px','height':'600px', 'padding-top': '80px' }"></p-panelMenu>-->
+
+<div class="container-fluid India-page col-md-2">
+  <ul class="nav nav-pills nav-stacked" *ngFor="let i of items">
+    <li><a href="#">{{i.label}}</a></li>
+  </ul>
+</div>
+
+<div class="container-fluid matches-container col-md-10">
+  <p-tabView>
+  <p-tabPanel header="Matches" headerStyleClass="tab-style" [selected]="true">
+    <!-- <p class="tab-style">This show the Matches</p> -->
+    <app-match-details></app-match-details>
+  </p-tabPanel>
+    <p-tabPanel header="Records">
+      <p>This shows the records</p>
+    </p-tabPanel>
+    <p-tabPanel header="series">
+      <p>This show the series</p>
+    </p-tabPanel>
+</p-tabView>
+</div>
+
+<!--<div class="container-fluid records-container">-->
+  <!--<p-tabView>-->
+   <!---->
+  <!--</p-tabView>-->
+<!--</div>-->
+

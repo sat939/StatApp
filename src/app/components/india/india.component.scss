@@ -1,0 +1,25 @@
+.India-page {
+  height:400px;
+  width: 200px;
+  float: left;
+  background-color:rgb(252, 252, 252);
+
+  //border-style:solid;
+  fill-opacity:0.2 ;
+  mixed-blend-mode: darken;
+
+  a {
+    color: black;
+    opacity: 10;
+    //background-color: rgb(253, 253, 255);
+  }
+}
+
+.matches-container {
+  //float:right;
+}
+
+.tab-style {
+  border-radius: 50%;
+  padding-left: 50px;
+}
