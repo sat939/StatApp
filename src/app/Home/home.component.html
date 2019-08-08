@@ -8,13 +8,13 @@
     <div class=" container text-style">
       <p> Choose a country you like to explore stats :</p>
     </div>
-    <div class="home-container" *ngFor="let i of numCountries">
+    <div class="home-container" *ngFor="let country of countryList">
 
-      <img src="./../../assets/Flags/{{i}}.png" style="width:60px; height:40px;"/>
+      <img src="./../../assets/Flags/{{country}}.png" style="width:60px; height:40px;"/>
 
 
       <div class="flag-text">
-        <a routerLink = "/{{i}}">{{i}} </a>
+        <a routerLink = "{{country}}">{{country}} </a>
       </div>
     </div>
   </div>

@@ -8,20 +8,23 @@ import {PanelMenuModule} from 'primeng/panelmenu';
 import {MegaMenuModule} from 'primeng/megamenu';
 import {SlideMenuModule} from 'primeng/slidemenu';
 import {TabViewModule} from 'primeng/tabview';
-
+import { HttpClientModule } from '@angular/common/http'
+;
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Header/header.component';
 import { HomeComponent } from './Home/home.component';
 import { DescriptionComponent } from './description/description.component';
-import { IndiaComponent } from './components/india/india.component';
+import { StatsDisplayComponent } from './components/stats-display/stats-display.component';
 import { FooterComponent } from './footer/footer.component';
-import { MatchDetailsComponent } from './match-details/match-details.component';
-import { MatchRecordsComponent } from './match-records/match-records.component';
-// import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatchDetailsComponent } from './components/match-details/match-details.component';
+import { MatchRecordsComponent } from './components/match-records/match-records.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { Globals } from './shared-data/globals';
+import { DataServiceService } from './services/data-service.service';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
-  {path:'India', component: IndiaComponent}
+  {path:':id', component: StatsDisplayComponent}
 ]
 
 @NgModule({
@@ -30,21 +33,20 @@ const appRoutes: Routes = [
     HeaderComponent,
     HomeComponent,
     DescriptionComponent,
-    IndiaComponent,
+    StatsDisplayComponent,
     FooterComponent,
     MatchDetailsComponent,
     MatchRecordsComponent
   ],
   imports: [
     BrowserModule,
-    //BrowserAnimationsModule,
-    // MegaMenuModule,
-    // SlideMenuModule,
-    // PanelMenuModule,
+    BrowserAnimationsModule,
     TabViewModule,
-    RouterModule.forRoot(appRoutes)
+    AgGridModule.withComponents([]),
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [Globals, DataServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
