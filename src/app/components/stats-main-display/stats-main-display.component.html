@@ -1,0 +1,17 @@
+<app-side-menu [currentComp]="currentComp" (selectTeam2)="selectedCountry($event)"
+    [team2]="team2"></app-side-menu>
+
+<div class="container-fluid matches-container col-md-10">
+  <p-tabView>
+  <p-tabPanel header="Matches" [headerStyle]="tabStyle" [selected]="true">
+    <app-match-details [team1]="currentComp" [team2]="team2"></app-match-details>
+  </p-tabPanel>
+    <p-tabPanel header="Records">
+      <p>This shows the records</p>
+    </p-tabPanel>
+    <p-tabPanel header="series">
+      <p>This show the series</p>
+    </p-tabPanel>
+</p-tabView>
+</div>
+

@@ -1,8 +1,8 @@
 <div class="container-fluid ">
   <div class="parallax">
-<div class="desc-container">
-  <p> Get your stats refreshed </p>
-</div>
+    <div class="desc-container">
+      <p style="color: black"> Get your stats refreshed </p>
+    </div>
   </div>
   <div class="col-md-10 text-container">
     <div class=" container text-style">
@@ -10,11 +10,11 @@
     </div>
     <div class="home-container" *ngFor="let country of countryList">
 
-      <img src="./../../assets/Flags/{{country}}.png" style="width:60px; height:40px;"/>
+      <img src="./../../assets/Flags/{{country}}.png" style="width:60px; height:40px;" />
 
 
       <div class="flag-text">
-        <a routerLink = "{{country}}">{{country}} </a>
+        <a routerLink="{{country}}">{{country}} </a>
       </div>
     </div>
   </div>

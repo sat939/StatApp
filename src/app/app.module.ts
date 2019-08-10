@@ -2,11 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
 import { BrowserAnimationsModule } from'@angular/platform-browser/animations';
-import { MenubarModule, MenuItem } from 'primeng/primeng';
-import { MenuModule } from 'primeng/menu';
-import {PanelMenuModule} from 'primeng/panelmenu';
-import {MegaMenuModule} from 'primeng/megamenu';
-import {SlideMenuModule} from 'primeng/slidemenu';
 import {TabViewModule} from 'primeng/tabview';
 import { HttpClientModule } from '@angular/common/http'
 ;
@@ -14,17 +9,18 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './Header/header.component';
 import { HomeComponent } from './Home/home.component';
 import { DescriptionComponent } from './description/description.component';
-import { StatsDisplayComponent } from './components/stats-display/stats-display.component';
+import { StatsMainDisplayComponent } from './components/stats-main-display/stats-main-display.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatchDetailsComponent } from './components/match-details/match-details.component';
 import { MatchRecordsComponent } from './components/match-records/match-records.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { Globals } from './shared-data/globals';
 import { DataServiceService } from './services/data-service.service';
+import { SideMenuComponent } from './components/side-menu/side-menu.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
-  {path:':id', component: StatsDisplayComponent}
+  {path:':id', component: StatsMainDisplayComponent}
 ]
 
 @NgModule({
@@ -33,10 +29,11 @@ const appRoutes: Routes = [
     HeaderComponent,
     HomeComponent,
     DescriptionComponent,
-    StatsDisplayComponent,
+    StatsMainDisplayComponent,
     FooterComponent,
     MatchDetailsComponent,
-    MatchRecordsComponent
+    MatchRecordsComponent,
+    SideMenuComponent
   ],
   imports: [
     BrowserModule,
