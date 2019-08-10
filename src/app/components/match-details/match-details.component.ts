@@ -6,12 +6,17 @@ import { DataServiceService } from './../../services/data-service.service';
 @Component({
   selector: 'app-match-details',
   templateUrl: './match-details.component.html',
-  styleUrls: ['./match-details.component.css']
+  styleUrls: ['./match-details.component.scss']
 })
 export class MatchDetailsComponent implements OnInit {
 
+  private _team2:string;
+
   @Input() team1: string;
-  @Input() team2: string;
+  @Input() set team2(value) {
+    this._team2 = value;
+    this.getMatchDetails();
+  }
 
   rowData: any;
   columnDefs = [
@@ -25,12 +30,12 @@ export class MatchDetailsComponent implements OnInit {
    }
 
   async ngOnInit() {
-     this.dataService.getTotalCount(this.team1, this.team2).then(data => {
+  }
+
+  async getMatchDetails() {
+     this.dataService.getTotalCount(this.team1, this._team2).then(data => {
        this.rowData = data;
-       console.log(data);
      });
-    //  this.rowData= [ { 'numOfMathces': 12, 'won': 10, 'lost': 2, 'noResult': 0},
-    //           { 'numOfMathces': 11, 'won': 10, 'lost': 1, 'noResult': 0}]
   }
 
   

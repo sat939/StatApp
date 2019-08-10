@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IndiaComponent } from './india.component';
+import { StatsMainDisplayComponent } from './stats-main-display.component';
 
 // xdescribe('IndiaComponent', () => {
 //   let component: IndiaComponent;
